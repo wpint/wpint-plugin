@@ -1,0 +1,27 @@
+{
+    "name": "wpint/wpint-plugin",
+    "type": "project",
+    "description": "The WPINT framework wordpress plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ali Barzegar",
+            "email": "ali.barzegar.rahimi@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\": "database/"
+        }
+    },
+    "require-dev": {
+        "wpint/framework": "^1.1.0",
+        "phpunit/phpunit": "^10.5",
+        "yoast/phpunit-polyfills": "^2.0"
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "minimum-stability": "dev"
+}
