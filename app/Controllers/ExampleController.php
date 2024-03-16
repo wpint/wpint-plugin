@@ -16,7 +16,7 @@ class ExampleController extends Controller
     public function page(Post $post)
     {
         $title = "WPINT";
-        echo view('wpfm', ['title' => $title]);
+        echo view('wpint', ['title' => $title]);
         return;
     }
 
