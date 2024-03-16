@@ -1,5 +1,4 @@
 .DS_Store
-.gitignore
 phpcs.xml
 phpunit.xml
 Thumbs.db
@@ -13,8 +12,7 @@ languages
 composer.lock
 package-lock.json
 .phpunit.cache
-.editorconfig
-.distignore
+composer-local.json
 .env
-resources/scripts/dist/*
+resources/scripts/dist/
 storage/plugin/views/*
