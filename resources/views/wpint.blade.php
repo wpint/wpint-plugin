@@ -1,12 +1,12 @@
-<div class="wpfm">
-    <h1> HI This is {{$title}} </h1> 
+<div class="wpint">
+    <h1> HI, This is {{$title}} </h1> 
 </div>
 <style>
-    .wpfm{
+    .wpint{
         height: 85vh;
         position: relative;
     }
-    .wpfm h1{
+    .wpint h1{
         font-size: 100px;
         color: rgb(199 199 199);
         margin: auto;
