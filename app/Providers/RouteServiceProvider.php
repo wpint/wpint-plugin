@@ -29,7 +29,7 @@ class RouteServiceProvider extends ServiceProvider
         // register routes.php file as a default route file
         // You can either customize or add another route files
         WPAPI::hook()
-        ->name('wpfm_initialized')
+        ->name('wpint_initialized')
         ->callback(function($app){
             $path = $app->routePath() . DIRECTORY_SEPARATOR . 'routes.php';
             if(File::exists($path))

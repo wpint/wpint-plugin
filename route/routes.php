@@ -5,31 +5,43 @@ use Wpint\Support\Facades\AjaxRoute;
 use Wpint\Support\Facades\RestRoute;
 use Wpint\Route\Enums\RouteHttpMethodEnum;
 use App\Controllers\ExampleController;
+use App\Middlewares\ExampleMiddleware;
+use Wpint\Support\Facades\WebRoute;
+
+
+// Home route
+WebRoute::path('/')
+->method(RouteHttpMethodEnum::GET)
+->controller([ExampleController::class, 'app'])
+->name('home');
 
 // add custom admin route (admin page)
 AdminRoute::path('test')
 ->menuTitle('wpint')
-->controller([ExampleController::class, 'page'])
-->name('route_one')
+->controller(function(){
+    echo  view('blank');
+})
+->name('admin_route')
+->middleware(ExampleMiddleware::class)
 ->position(100);
 
 // add custom rest route
-RestRoute::method(RouteHttpMethodEnum::GET)
-->path('/test-1/(?P<id>\d+)')
-->namespace('wp/v2/wpint')
-->permission(function(WP_REST_Request $request)
-{
-    return true;
-})
-->controller([ExampleController::class, 'rest']);
+// RestRoute::method(RouteHttpMethodEnum::GET)
+// ->path('/test-1/(?P<id>\d+)')
+// ->namespace('wp/v2/wpint')
+// ->permission(function(WP_REST_Request $request)
+// {
+//     return true;
+// })
+// ->controller(function(){
+//     return true;
+// });
 
-// add custom ajax route
-AjaxRoute::name('like_test')
-->controller([ExampleController::class, 'ajax']);
+// AjaxRoute::name('like_test')
+// ->controller(function(){
+//     return wp_send_json_success([
+//         'wpint'  => true
+//     ]);
+// });
 
-// add custom child of route_one   
-// AdminRoute::path('test-2')
-// ->capability('edit_posts')
-// ->parent($route1)
-// ->middleware(IsAdminMiddleware::class)
-// ->controller([ExampleController::class, 'test']);
+

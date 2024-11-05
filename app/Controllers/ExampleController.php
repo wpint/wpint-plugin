@@ -3,45 +3,22 @@ namespace App\Controllers;
 
 use WPINT\Framework\Include\Controller\Controller;
 use App\Models\Post;
+use Inertia\Inertia;
 
 class ExampleController extends Controller
 {
     
     /**
-     * admin page method 
+     * Home Page 
      *
      * @param Post $post
      * @return void
      */
-    public function page(Post $post)
+    public function app()
     {
         $title = "WPINT";
-        echo view('wpfm', ['title' => $title]);
+        echo view('app', ['title' => $title]);
         return;
-    }
-
-    /**
-     * rest method
-     *
-     * @param [type] $data
-     * @param Post $post
-     * @return void
-     */
-    public function rest($data, Post $post)
-    {
-         return $post->find($data['id'])->toArray();
-    }
-    
-    /**
-     * ajax method
-     *
-     * @return void
-     */
-    public function ajax()
-    {
-        return wp_send_json_success([
-            'test'  => 'test'
-        ]);
     }
 
 }

@@ -16,10 +16,35 @@
         }
     },
     "require-dev": {
-        "wpint/framework": "^1.1.0",
         "phpunit/phpunit": "^10.5",
         "yoast/phpunit-polyfills": "^2.0"
     },
+    "require": {
+        "wpint/framework": "*",
+        "wpint/inertia": "dev-dev"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../packages/wpint/route"
+        },
+        {
+            "type": "path",
+            "url": "../../packages/wpint/support"
+        },
+        {
+            "type": "path",
+            "url": "../../packages/wpint/wpapi"
+        },
+        {
+            "type": "path",
+            "url": "../../packages/wpint/framework"
+        },
+        {
+            "type": "path",
+            "url": "../../packages/wpint/inertia"
+        }
+    ],
     "scripts": {
         "test": "phpunit"
     },

@@ -2,9 +2,9 @@
 **Contributors:** [ALI BARZEGAR RAHIMI (ABRZ)](https://github.com/abrzzzz/)  
 **Tags:** Wordpress, wp-plugin, plugin, wordpress plugin framework, framework, wpint, wpint plugin, wpint-plugin
 **Requires at least:** 4.5  
-**Tested up to:** 6.3.1  
-**Requires PHP:** 7.3  
-**Stable tag:** 1.0.0  
+**Tested up to:** 6.6.2  
+**Requires PHP:** 8.1
+**Stable tag:** 1.1.0  
 **License:** MIT License   
 **License URI:** https://mit-license.org/
 
@@ -41,6 +41,7 @@ Simply clone the repo from github and place it in your `wp-content/plugins` dire
 e.g.
 
 1. Run `git clone git@github.com:wpint/wpint-plugin.git` in the plugin directory
+2. Go to the framework directory and Run `chmod +x ./bin/startup.sh && ./bin/startup.sh`
 2. Run `composer install` (make sure you have composer installed)
 3. Run `npm install` (make sure you have nodejs installed)
 4. Activate the plugin through the 'Plugins' menu in WordPress dashboard
@@ -50,18 +51,20 @@ e.g.
 1. Make sure you have the `storage/plugin/views` directory writable in root of the plugin.
 2. You may get the .env file not found error, change .env.example to .env
 
-All these concerns will be resolved in the next releases by appropriate command.
+All these concerns will be resolved by running the `./bin/startup.sh` file.
 
 ## Changelog ##
 ### 1.0.0 ###
 * Initial release
 * Release date: 2023-01-10
+### 1.1.0 ###
+* Route debug and new implementation 
 
 ## Contributing ##
 Thank you for contributing this framework, please review [Contributing Guides](./CONTRIBUTING.md)
 
 ## Security ##
-In terms of finding any security issues, please send an email to [support@wpint.com](mailto:support@wpint.com)
+In terms of finding any security issues, please send an email to [info@labenter.com](mailto:info@labenter.com)
 
 ## License ##
 The WPINT framework is open-sourced software licensed under the [MIT license](https://opensource.org/license/mit/).

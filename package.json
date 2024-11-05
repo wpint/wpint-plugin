@@ -1,24 +1,14 @@
 {
-  "name": "wpcf-plugin",
-  "version": "0.1.0",
-  "main": "Gruntfile.js",
+  "name": "wpint-plugin",
+  "main": "vite.config.js",
   "author": "Ali Barzegar Rahimi",
   "scripts": {
-    "start": "grunt default",
-    "js": "grunt js",
-    "css": "grunt css",
-    "readme": "grunt readme",
-    "i18n": "grunt i18n"
+    "dev": "vite",
+    "build": "vite build"
   },
   "devDependencies": {
-    "grunt": "^1.6.1",
-    "grunt-concat-css": "^0.3.2",
-    "grunt-contrib-concat": "^2.1.0",
-    "grunt-contrib-cssmin": "^5.0.0",
-    "grunt-contrib-jshint": "^3.2.0",
-    "grunt-contrib-uglify": "^5.2.2",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-wp-i18n": "^1.0.3",
-    "grunt-wp-readme-to-markdown": "^2.1.0"
+    "vite": "^5.4.10"
+  },
+  "dependencies": {
   }
 }

@@ -22,25 +22,5 @@ class ExampleCommand extends Command implements ConsoleContract
         CLI::success( "I'll Show you" );
     }
 
-    /**
-     * runs before the command execution
-     *
-     * @return void
-     */
-    public function hook_before_invoke()
-    {
-        CLI::warning('before invoke.');
-    }
-    
-    /**
-     * runs after command execution
-     *
-     * @return void
-     */
-    public function hook_after_invoke()
-    {
-        CLI::warning('after invoke.');
-    }
-
 
 }       
