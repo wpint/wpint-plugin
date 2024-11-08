@@ -1,26 +1,35 @@
 <?php 
-namespace App\Consoles;
+namespace WPINT\Inertia\Console;
 
-use Wpint\Contracts\Console\ConsoleContract;
 use WPINT\Framework\Console\Command;
-use Wpint\Support\Facades\CLI;
+use WPINT\Framework\Console\CommandAttribute;
+use WPINT\Framework\Console\SubCommandAttribute;
 
-class ExampleCommand extends Command implements ConsoleContract
+/**
+ * All WP_CLI::add_command()'s third optional 
+ * $args can be introduced to the command in CommnadAttribute arguments 
+ */
+#[CommandAttribute(['shortdesc' => 'WPINT: This is the example command'])]
+class ExampleCommand extends Command
 {
 
-    public string $command = 'examplecommand';
+    /**
+     * Commane name
+     *
+     * @var string
+     */
+    public string $command = 'example';
 
     /**
-     * command logic
+     * Example Command
+     * Any method that has SubCommandAttribute will be registered as sub command
      *
-     * @param [type] $args
-     * @param [type] $assoc_args
      * @return void
      */
-    public function handle($args, $assoc_args)
-    {        
-        CLI::success( "I'll Show you" );
-    }
+    #[SubCommandAttribute('example command\'s description')]
+    protected function subcommand()
+    {
 
+    }
 
 }       

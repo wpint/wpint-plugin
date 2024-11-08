@@ -1,5 +1,5 @@
 <div class="wpint">
-    <h1> HI this is WPINT </h1> 
+    <h1> HI This is {{ $title }} </h1> 
 </div>
 <style>
     .wpint{

@@ -1,8 +1,6 @@
 <?php
 
 use Wpint\Support\Facades\AdminRoute;
-use Wpint\Support\Facades\AjaxRoute;
-use Wpint\Support\Facades\RestRoute;
 use Wpint\Route\Enums\RouteHttpMethodEnum;
 use App\Controllers\ExampleController;
 use App\Middlewares\ExampleMiddleware;
@@ -18,9 +16,7 @@ WebRoute::path('/')
 // add custom admin route (admin page)
 AdminRoute::path('test')
 ->menuTitle('wpint')
-->controller(function(){
-    echo  view('blank');
-})
+->controller([ExampleController::class, 'app'])
 ->name('admin_route')
 ->middleware(ExampleMiddleware::class)
 ->position(100);
@@ -37,6 +33,7 @@ AdminRoute::path('test')
 //     return true;
 // });
 
+// add custom ajax routes
 // AjaxRoute::name('like_test')
 // ->controller(function(){
 //     return wp_send_json_success([

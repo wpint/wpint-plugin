@@ -34,7 +34,7 @@ return [
         // App Providers
         \App\Providers\WPServiceProvider::class,
         \App\Providers\RouteServiceProvider::class,        
-        // \WPINT\Inertia\InertiaServiceProvider::class,
+        \WPINT\Inertia\InertiaServiceProvider::class,
         // \Wpint\JWT\JWTServiceProvider::class,
     ],
 
@@ -53,7 +53,7 @@ return [
         'vite' => \WPINT\Framework\Providers\ViteServiceProvider::class,
         'session'   => \Illuminate\Session\SessionServiceProvider::class,
         'wpapi'     =>  \Wpint\WPAPI\WPAPIServiceProvider::class,
-        // 'inertia'   =>  \WPINT\Inertia\InertiaServiceProvider::class,
+        'inertia'   =>  \WPINT\Inertia\InertiaServiceProvider::class,
         // 'jwt'   =>  \Wpint\JWT\JWTServiceProvider::class,
         
     ],

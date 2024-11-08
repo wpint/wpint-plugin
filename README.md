@@ -28,7 +28,7 @@ also provides a lot of features by using of the wordpress's core APIs and the [L
 *   [File System](https://github.com/illuminate/filesystem)
 
 and also its native searvices such as:
-*   [Routes (Admin Page, Rest Endpoint, Ajax)]()
+*   [Routes (Web Routes, Admin Page, Rest Endpoint, Ajax Endpoint)]()
 *   [WPAPI]()
 *   [Request]()
 *   [CLI]()
@@ -47,7 +47,7 @@ e.g.
 4. Activate the plugin through the 'Plugins' menu in WordPress dashboard
 5. Start developing
 
-## Caveats ## 
+## Caveats ##  
 1. Make sure you have the `storage/plugin/views` directory writable in root of the plugin.
 2. You may get the .env file not found error, change .env.example to .env
 
