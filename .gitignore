@@ -13,6 +13,6 @@ composer.lock
 package-lock.json
 .phpunit.cache
 composer-local.json
-.env
 resources/scripts/dist/
 storage/plugin/views/*
+.env

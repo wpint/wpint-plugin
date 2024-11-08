@@ -19,7 +19,6 @@
     15 => 'Wpint\\WPAPI\\WPAPIServiceProvider',
     16 => 'App\\Providers\\WPServiceProvider',
     17 => 'App\\Providers\\RouteServiceProvider',
-    18 => 'WPINT\\Inertia\\InertiaServiceProvider',
   ),
   'eager' => 
   array (
@@ -39,7 +38,6 @@
     13 => 'Wpint\\WPAPI\\WPAPIServiceProvider',
     14 => 'App\\Providers\\WPServiceProvider',
     15 => 'App\\Providers\\RouteServiceProvider',
-    16 => 'WPINT\\Inertia\\InertiaServiceProvider',
   ),
   'deferred' => 
   array (
