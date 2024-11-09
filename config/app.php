@@ -33,7 +33,7 @@ return [
         
         // App Providers
         \App\Providers\WPServiceProvider::class,
-        \App\Providers\RouteServiceProvider::class,        
+        \App\Providers\RouteServiceProvider::class,    
         // \WPINT\Inertia\InertiaServiceProvider::class,
         // \Wpint\JWT\JWTServiceProvider::class,
     ],

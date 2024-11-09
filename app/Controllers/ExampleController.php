@@ -7,9 +7,8 @@ class ExampleController extends Controller
 {
     
     /**
-     * Home Page 
+     * Blank Page
      *
-     * @param Post $post
      * @return void
      */
     public function app()

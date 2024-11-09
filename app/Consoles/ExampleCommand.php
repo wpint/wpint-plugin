@@ -29,7 +29,7 @@ class ExampleCommand extends Command
     #[SubCommandAttribute('example command\'s description')]
     protected function subcommand()
     {
-
+        // Commands logic
     }
 
 }       

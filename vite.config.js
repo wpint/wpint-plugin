@@ -1,6 +1,5 @@
 import path from 'path';
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   server:  {
@@ -10,10 +9,10 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-    
+      "@": path.resolve(__dirname, "./resources/scripts/src"),
+      '@components': path.resolve(__dirname, './resources/scripts/src/components'),
     },
   },
-  plugins: [],
   build: {
     manifest: true,
     outDir: 'resources/scripts/dist',
