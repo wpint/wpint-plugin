@@ -14,5 +14,6 @@ package-lock.json
 .phpunit.cache
 composer-local.json
 resources/scripts/dist/
-storage/plugin/views/*
 .env
+storage/
+bootstrap/cache/

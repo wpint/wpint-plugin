@@ -1,11 +1,15 @@
 <?php 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class User extends Model
+class User extends Authenticatable
 {
-
+    /** @use HasFactory<\Database\Factories\UserFactory> */
+    use HasFactory, Notifiable;
+    
     /**
      * $table
      *
@@ -43,7 +47,46 @@ class User extends Model
         'user_status',
         'display_name',
     ];
+
     
+    protected $hidden = ['user_pass'];
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'user_pass' => 'hashed',
+        ];
+    }
+
+    /**
+     * Get auth user password
+     *
+     * @return void
+     */
+    public function getAuthPassword()
+    {
+        return $this->user_pass;
+    }
+    
+    /**
+     * Get the wp user roles
+     *
+     * @return void
+     */
+    function roles()
+    {
+        $meta = $this->meta()->where('user_id', $this->ID)
+            ->where('meta_key', 'wp_capabilities')
+            ->value('meta_value');
+
+        return array_keys(unserialize($meta));
+    }
+
     /**
      * This user has many user meta
      *

@@ -1,15 +1,10 @@
 <?php 
 namespace App\Providers;
 
-use Wpint\WPAPI\Enqueuer\Enum\EnqueuerScopeEnum;
-use Wpint\WPAPI\Metabox\Enum\MetaboxContextEnum;
-use Wpint\WPAPI\Metabox\Enum\MetaboxPriorityEnum;
-use Wpint\WPAPI\Setting\Enum\OptionGroupEnum;
-use Illuminate\Support\ServiceProvider;
-use WPINT\Framework\Foundation\Vite;
+use Illuminate\Support\Facades\Exceptions;
+use WPINT\Core\Foundation\ServiceProvider;
 use Wpint\Support\Facades\WPAPI;
 use Wpint\WPAPI\Hook\Enum\HookTypeEnum;
-use Wpint\WPAPI\Taxonomy\Enum\TaxonomyCapabilitiesEnum;
 
 class WPServiceProvider extends ServiceProvider
 {
@@ -30,8 +25,8 @@ class WPServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot(): void
-    {
-
+    {   
+        
         /**
          * enqueue compiled js and css files
          * default scope is ADMIN
@@ -72,25 +67,24 @@ class WPServiceProvider extends ServiceProvider
         //     return $content;
         // })->register();
 
-        
         /**
          * e.g: add a custom post type
          */
-        WPAPI::postType()
-        ->id('wpint')
-        ->public()
-        ->register();
+        // WPAPI::postType()
+        // ->id('wpint')
+        // ->public()
+        // ->register();
 
         /**
          * e.g: add a custom taxonomy
          */
-         WPAPI::taxonomy()
-        ->name('wpint')
-        ->public()
-        ->showQuickEdit()
-        ->hierarchical()
-        ->posttype('wpint')
-        ->register();
+        //  WPAPI::taxonomy()
+        // ->name('wpint')
+        // ->public()
+        // ->showQuickEdit()
+        // ->hierarchical()
+        // ->posttype('wpint')
+        // ->register();
         
         /**
          * add a custom cron interval
@@ -131,18 +125,19 @@ class WPServiceProvider extends ServiceProvider
         // ->register();
 
         /**
-         * add a custom Hook (action or filter ) 
+         * Prevent a custom routes filter
          * default type is ACTION 
          */
         // WPAPI::hook()
-        // ->name('the_content')
+        // ->name('wpint_prevent_dispatch')
         // ->type(HookTypeEnum::FILTER)
-        // ->callback(function($content)
+        // ->acceptedArgs(1)
+        // ->callback(function($pipes)
         // {
-        //     return $content . ' <br> This is a custom hook';
+        //     // prevent route dispatcher            
+        //     return $pipes;
         // })
         // ->register();
-    
     }
 
 }

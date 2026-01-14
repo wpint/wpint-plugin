@@ -30,9 +30,9 @@ return [
 
     'compiled' => env(
         'VIEW_COMPILED_PATH',
-        realpath(storage_path('plugin/views'))
+        storage_path('framework/cache/data')
     ),
 
-    'cache' => realpath(storage_path('plugin/cache')),
+    'cache' => storage_path('framework/cache/data'),
 
 ];

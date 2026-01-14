@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:     WPINT Plugin
+ * Plugin Name:     WPINT Plugin new major
  * Plugin URI:      PLUGIN SITE HERE
  * Description:     This is for using wpint framework
  * Author:          Ali Barzegar Rahimi
@@ -13,28 +13,29 @@
  */
 
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
+
 define('WPINT_PLUGIN_PATH', dirname(__FILE__));
 
 define('WPINT_PLUGIN_URI', plugin_dir_url(__FILE__));
 
-$app = require_once dirname(__FILE__) . "/bootstrap/app.php";
+add_action('plugins_loaded', function(){
+    $app = require_once dirname(__FILE__) . "/bootstrap/app.php";
+    $app->handleRequest(Request::capture());
+}, 1);
+
 
 // Your code starts here.
 function wpint_plugin_activation() 
 {
-    // create tables
-    // Migration::up();
+  
 } 
 register_activation_hook( __FILE__, 'wpint_plugin_activation' );
 
 function wpint_plugin_deactivation() 
 {
-    // remove all created tables
-    //Migration::down();
-
-    // Clear the permalinks to remove our post type's rules from the database.
+    Artisan::call('optimize:clear');
 	flush_rewrite_rules();
-
 }
 register_deactivation_hook( __FILE__, 'wpint_plugin_deactivation' );
-

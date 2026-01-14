@@ -12,18 +12,49 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "Database\\": "database/"
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "^10.5",
-        "yoast/phpunit-polyfills": "^2.0"
+        "fakerphp/faker": "^1.23",
+        "laravel/pint": "^1.24",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^8.6",
+        "phpunit/phpunit": "^11.5.3"
     },
     "require": {
-        "wpint/framework": "*"
+        "wpint/core": "*"
     },
     "scripts": {
-        "test": "phpunit"
+        "setup": [
+            "composer install",
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+            "npm install",
+            "npm run build"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ]
+    },
+    "extra": {
+        "wpint": {
+            "dont-discover": []
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true
+        }
     },
     "minimum-stability": "dev"
 }
