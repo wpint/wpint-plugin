@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:     WPINT Plugin new major
+ * Plugin Name:     WPINT Framework
  * Plugin URI:      PLUGIN SITE HERE
  * Description:     This is for using wpint framework
  * Author:          Ali Barzegar Rahimi
